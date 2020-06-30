@@ -1,0 +1,72 @@
+# ConL-IME schema
+# encoding: utf-8
+
+schema:
+  name: "English"
+  schema_id: "english"
+  author:
+    - "ConL-IME, <E-MAIL@ADDRESS>"
+  description: |
+    适用于 English 的 ConL-IME 输入方案。
+  version: 0.1
+
+switches:
+  - name: _hide_candidate # 是否隐藏候选栏 (0:不隐藏, 1:隐藏)
+    reset: 0
+  - name: _hide_key_hint # 按键助记符号 (0:不隐藏, 1:隐藏)
+    reset: 0
+  - options: [ LOGO ] # 设置 LOGO
+    states: [ "🇺🇸" ]
+
+engine:
+  processors:
+    - key_binder # 将按键绑定到其它按键 (需在其它 processor 之前使用)
+    - speller # 将字母键加入到输入码序列中 (编码串)
+    - selector # 以数字键选字 (同时也还响应前次页、上下方向键)
+    - navigator # 响应左右方向键、Home、End 键 (实现移动插入点的编辑功能)
+    - express_editor # 空格确认当前输入，其它字符直接上屏
+  segmentors:
+    - abc_segmentor # 标识常规文字段落 (给输入码打上 abc 标签)
+    - fallback_segmentor # 标识其它未标识段落 (将输入码连缀成一段)
+  translators:
+    - echo_translator # 没有其它候选项时，显示出输入码 (把编码串作为一个候选项)
+    - table_translator # 码表翻译器
+  filters:
+    - uniquifier # 过滤重复的候选项
+
+key_binder:
+  import_preset: default # 导入 default.yaml 中绑定的键
+  bindings: # 自定义绑定的键
+    - {accept: comma, send: 2, when: has_menu} # 将逗号键设为选择第二重码
+    - {accept: period, send: 3, when: has_menu} # 将句号键设为选择第三重码
+
+speller:
+  alphabet: 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM@"():-/;,!.?' # 定义本方案输入键
+  initials: 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM@"():-/;,!.?' # 定义仅作始码的键
+  finals: 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM@"():-/;,!.?' # 定义仅作末码的键
+  auto_select: true # 是否开启自动上屏
+
+translator:
+  enable_encoder: false # 是否开启自动造词
+  encode_commit_history: false # 是否对已上屏词自动成词
+  enable_completion: true # 是否提前显示尚未输入完整码的字
+  sentence_over_completion: false # 是否在无全码对应字而仅有逐键提示时开启智能组句
+  enable_sentence: false # 是否开启自动造句
+  enable_user_dict: false # 是否开启用户词典
+  dictionary: english # 设置字典文件
+  comment_format:
+    - "xform/[~a-zA-Z]//" # 去除按键提示
+
+menu:
+  page_size: 5 # 每页候选个数
+
+style:
+  horizontal: true # 候选界面为横向
+  # 字体
+      # 状态栏
+  candidate_font: NotoSans-Regular.ttf # 候选字字体
+      # 主键区
+  key_font: NotoSerif-Regular.ttf # 按键字体（click）
+  preview_font: NotoSerif-Regular.ttf # 按键气泡 (preview) 字体
+  symbol_font: CODE2000.ttf # 符号字体（long_click 和 hint）
+

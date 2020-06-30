@@ -1,0 +1,49 @@
+# ConL-IME schema
+# encoding: utf-8
+
+---
+name: "klingon_latin"
+version: "0.1"
+sort: original
+use_preset_vocabulary: false
+columns:
+  - text
+  - code
+...
+
+# 适配 TRime 的长按输入
+
+@	@
+"	"
+(	(
+)	)
+:	:
+-	-
+/	/
+;	;;
+,	,
+!	!
+.	.
+?	?
+
+# 数字
+
+1	;Q
+2	;W
+3	;E
+
+4	;R
+5	;T
+6	;Y
+7	;U
+8	;I
+9	;O
+0	;P
+
+4	;A
+5	;S
+6	;D
+7	;Z
+8	;X
+9	;C
+0	;F

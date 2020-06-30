@@ -14,24 +14,24 @@ ConL-IME 分为国内版和国际版，根据自己的需求下载即可。
 ## 文档
 
 + 关于
-    + [ConL-IME 是什么](.docs/README/About-Me.md)
-    + [支持的功能和语言](.docs/README/About-Feature.md)
-    + [经常问的问题](.docs/README/About-FAQ.md)
+    + [ConL-IME 是什么](docs/README/About-Me.md)
+    + [支持的功能和语言](docs/README/About-Feature.md)
+    + [经常问的问题](docs/README/About-FAQ.md)
 + 使用
-    + [输入规则](.docs/README/Wiki-Rules.md)
-    + [Android](.docs/README/Wiki-Android.md)
-    + [iOS](.docs/README/Wiki-iOS.md)
-    + [Linux](.docs/README/Wiki-Linux.md)
-    + [macOS](.docs/README/Wiki-macOS.md)
-    + [Windows](.docs/README/Wiki-Windows.md)
+    + [输入规则](docs/README/Wiki-Rules.md)
+    + [Android](docs/README/Wiki-Android.md)
+    + [iOS](docs/README/Wiki-iOS.md)
+    + [Linux](docs/README/Wiki-Linux.md)
+    + [macOS](docs/README/Wiki-macOS.md)
+    + [Windows](docs/README/Wiki-Windows.md)
 + 交流
-    + [反馈 Bug](.docs/README/Communicate-Bug.md)
-    + [请求 Feature](.docs/README/Communicate-Feature.md)
-    + [加入社群](.docs/README/Communicate-Group.md)
+    + [反馈 Bug](docs/README/Communicate-Bug.md)
+    + [请求 Feature](docs/README/Communicate-Feature.md)
+    + [加入社群](docs/README/Communicate-Group.md)
 + 捐赠
-    + [捐赠](.docs/README/Other-Donate.md)
+    + [捐赠](docs/README/Other-Donate.md)
 + 鸣谢
-    + [鸣谢](.docs/README/Other-Thanks.md)
+    + [鸣谢](docs/README/Other-Thanks.md)
 
 ## 相关项目
 
