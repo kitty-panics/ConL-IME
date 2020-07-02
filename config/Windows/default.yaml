@@ -1,0 +1,50 @@
+# IME.ME default settings
+# encoding: utf-8
+
+config_version: '0.40'
+
+# 方案列表 (注释以禁用，反注释以启用)
+schema_list:
+  - schema: english       # 英语
+  - schema: esperanto     # 世界语
+  #- schema: klingon      # 克林贡语
+  - schema: klingon_latin # 克林贡语 (拉丁)
+
+# 切换方案
+switcher:
+  caption: "=> Switch Lang:"
+  hotkeys:
+    - Control+space
+    #- Control+grave
+    #- Control+Shift+grave
+    #- F4
+  fold_options: true
+  abbreviate_options: true
+  option_list_separator: '／'
+  #fix_schema_list_order: true # 固定方案列表的顺序 (此项无效)
+
+menu:
+  page_size: 5
+
+key_binder:
+  bindings:
+    # 切换方案 ("总是" 响应快捷键)
+    - {when: always, accept: Control+Alt+1, select: en} # 快速切换至 "英语"
+    # 编辑输入码/操作光标 ("处于输入过程时" 响应快捷键)
+    - {when: composing, accept: Control+b, send: Left}      # 左移
+    - {when: composing, accept: Control+f, send: Right}     # 右移
+    - {when: composing, accept: Control+a, send: Home}      # 移至行首
+    - {when: composing, accept: Control+e, send: End}       # 移至行尾
+    - {when: composing, accept: Control+d, send: Delete}    # 删除键
+    - {when: composing, accept: Control+h, send: BackSpace} # 退格键
+    - {when: composing, accept: Control+g, send: Escape}    # ESC 键
+    # 翻页 ("处于翻页/有候选项时" 响应快捷键)
+    - {when: paging, accept: minus, send: Page_Up}            # 上一页 (- 键)
+    - {when: has_menu, accept: equal, send: Page_Down}        # 下一页 (= 键)
+    - {when: paging, accept: bracketleft, send: Page_Up}      # 上一页 ([ 键)
+    - {when: has_menu, accept: bracketright, send: Page_Down} # 下一页 (] 键)
+    - {when: paging, accept: semicolon, send: Page_Up}        # 上一页 (; 键)
+    - {when: has_menu, accept: apostrophe, send: Page_Down}   # 下一页 (' 键)
+    - {when: paging, accept: Alt+v, send: Page_Up}            # 上一页 (Alt+V 键)
+    - {when: has_menu, accept: Control+v, send: Page_Down}    # 下一页 (Ctrl+V 键)
+
