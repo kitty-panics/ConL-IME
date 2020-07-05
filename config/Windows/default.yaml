@@ -29,7 +29,7 @@ menu:
 key_binder:
   bindings:
     # 切换方案 ("总是" 响应快捷键)
-    - {when: always, accept: Control+Alt+1, select: en} # 快速切换至 "英语"
+    - {when: always, accept: Control+Alt+1, select: english} # 快速切换至 "英语"
     # 编辑输入码/操作光标 ("处于输入过程时" 响应快捷键)
     - {when: composing, accept: Control+b, send: Left}      # 左移
     - {when: composing, accept: Control+f, send: Right}     # 右移
